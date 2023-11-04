@@ -12,8 +12,8 @@ func main() {
 		port = ":" + os.Getenv("PORT")
 	}
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello, World!"))
+	http.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("pong"))
 	})
 
 	http.ListenAndServe(port, nil)
